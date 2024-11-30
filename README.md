@@ -31,7 +31,7 @@ First, let's set up the Checkly CLI in your project:
 ```
 npm create checkly
 ```
-Make your selections and log in to your Checkly account.This interactive set up will:
+Make your selections and log in to your Checkly account. This interactive set up will:
 - Install the Checkly CLI.
 - Create a `checkly.config.ts` file at the root of your project.
 - Create a `__checks__` directory to store your checks.
@@ -66,15 +66,15 @@ If you have tests already running in your Checkly account via the web UI, here's
 - Go to your [Checkly Dashboard](https://app.checklyhq.com)
 - Click on the ⋮ menu to the right of a check
 - Select "Export to Code"
-- Save the generated files in your `__checks__` directory
+- Save the generated files in the `__checks__` directory
 
 
 Your existing UI-based tests will continue to run until you're ready to switch completely to the CLI-based setup. Once you migrate existing checks, you'll need to deactivate them in your Checkly account to avoid duplicate runs. You'll also want to set up alerts for your new checks in the new file.
 
 ## Setting Up an Email Alert Channel
-To set up alerts, you'll need to create an `alert-channels.ts` file in your `src` directory, or copy the one in this repository. This file will define your alert channels and when/how they should be triggered.
+To set up alerts, you'll need to create a `alert-channels.ts` file in your `src` directory, or copy the one in this repository. This file will define your alert channels and when/how they should be triggered.
 
-The process of setting up an alert is similar for checks and Playwright tests, but the configuration is slightly different. The CLI will convert Playwright tests into Browser Checks, but if you want to set up alerts for them, you'll need create a Browser Check for it, and specify the alert channels in the configuration.
+The process of setting up an alert is similar for checks and Playwright tests, but the configuration is slightly different. The CLI will convert Playwright tests into Browser Checks, but if you want to set up alerts for them, you'll need to create a Browser Check for it, and specify the alert channels in the configuration.
 
  Here's a general example of how to set up an email alert channel:
 1. Create the alert channel in `alert-channels.ts`:
@@ -129,7 +129,7 @@ Use the following commands to log in, test, and deploy your checks.
 | `npx checkly login` | Sign up, or log in to an existing Checkly account. |
 | `npx checkly test` | Perform a dry run of all checks in your repo to make sure the CLI recognizes them.|
 | `npx checkly deploy` | Deploy all checks and resources to your Checkly account. |
-|`npx checkly trigger`| Run checks from your Checkly account. Use this for checks created in the web UI.|
+|`npx checkly trigger`| Run checks from your Checkly account. Use this for checks created on the web UI.|
 
 After deploying tests, you can view them in your [Checkly dashboard](https://app.checklyhq.com/).
 
@@ -154,7 +154,7 @@ Here's a summary of the steps:
 ## Helpful Tips and Resources
 - Keep the `tags: ["mac"]` in the generated `checkly.config.ts` to differentiate checks created in the UI from those created with the CLI.
 - Run `npm checkly test` to perform a dry run of your checks before deploying them.
-- When moving your checks to the CLI, consider deactivating your UI-based checks rather than deleting them. This way, you'll keep all of their historical data. You cna read more about how long we store results [here](https://www.checklyhq.com/docs/monitoring/how-we-store-data/#data-retention).
+- When moving your checks to the CLI, consider deactivating your UI-based checks rather than deleting them. This way, you'll keep all of their historical data. You can read more about how long we store results [here](https://www.checklyhq.com/docs/monitoring/how-we-store-data/#data-retention).
 
 **Documentation**
 - [Command Line Reference](https://www.checklyhq.com/docs/cli/command-line-reference/)
